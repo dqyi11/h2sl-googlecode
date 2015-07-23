@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <instruction text="exit the right of the refrigerator"/>
+  <world time="0">
+    <object name="o0" type="robot"/>
+    <object name="o1" type="fridge"/>
+    <object name="o2" type="table"/>
+    <object name="o3" type="chair"/>
+  </world>
+  <VP>
+    <grounding>
+      <grounding_set>
+        <constraint type="outside">
+          <parent>
+            <region type="na">
+              <object name="o0" type="robot"/>
+            </region>
+          </parent>
+          <child>
+            <region type="right">
+              <object name="o1" type="fridge"/>
+            </region>
+          </child>
+        </constraint>
+      </grounding_set>
+    </grounding>
+    <VB text="exit"/>
+    <NP>
+      <grounding>
+        <grounding_set>
+          <region type="right">
+            <object name="o1" type="fridge"/>
+          </region>
+        </grounding_set>
+      </grounding>
+      <NP>
+        <grounding>
+          <grounding_set>
+            <region type="right">
+              <object name="na" type="na"/>
+            </region>
+          </grounding_set>
+        </grounding>
+        <DT text="the"/>
+        <NN text="right"/>
+      </NP>
+      <PP>
+        <grounding>
+          <grounding_set>
+            <region type="na">
+              <object name="o1" type="fridge"/>
+            </region>
+          </grounding_set>
+        </grounding>
+        <IN text="of"/>
+        <NP>
+          <grounding>
+            <grounding_set>
+              <region type="na">
+                <object name="o1" type="fridge"/>
+              </region>
+            </grounding_set>
+          </grounding>
+          <DT text="the"/>
+          <NN text="refrigerator"/>
+        </NP>
+      </PP>
+    </NP>
+  </VP>
+</root>

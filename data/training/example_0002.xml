@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <instruction text="walk to the left of the sink"/>
+  <world time="0">
+    <object name="o0" type="robot"/>
+    <object name="o1" type="box"/>
+    <object name="o2" type="sink"/>
+    <object name="o3" type="chair"/>
+  </world>
+  <VP>
+    <grounding>
+      <grounding_set>
+        <constraint type="inside">
+          <parent>
+            <region type="na">
+              <object name="o0" type="robot"/>
+            </region>
+          </parent>
+          <child>
+            <region type="left">
+              <object name="o2" type="sink"/>
+            </region>
+          </child>
+        </constraint>
+      </grounding_set>
+    </grounding>
+    <VB text="walk"/>
+    <PP>
+      <grounding>
+        <grounding_set>
+          <region type="left">
+            <object name="o2" type="sink"/>
+          </region>
+        </grounding_set>
+      </grounding>
+      <TO text="to"/>
+      <NP>
+        <grounding>
+          <grounding_set>
+            <region type="left">
+              <object name="o2" type="sink"/>
+            </region>
+          </grounding_set>
+        </grounding>
+        <NP>
+          <grounding>
+            <grounding_set>
+              <region type="left">
+                <object name="na" type="na"/>
+              </region>
+            </grounding_set>
+          </grounding>
+          <DT text="the"/>
+          <NN text="left"/>
+        </NP>
+        <PP>
+          <grounding>
+            <grounding_set>
+              <region type="na">
+                <object name="o2" type="sink"/>
+              </region>
+            </grounding_set>
+          </grounding>  
+          <IN text="of"/>
+          <NP>
+            <grounding>
+              <grounding_set>
+                <region type="na">
+                  <object name="o2" type="sink"/>
+                </region>
+              </grounding_set>
+            </grounding>
+            <DT text="the"/>
+            <NN text="sink"/>
+          </NP>
+        </PP>
+      </NP>
+    </PP>
+  </VP>
+</root>

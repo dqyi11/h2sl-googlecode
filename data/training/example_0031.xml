@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <instruction text="approach the front of the sofa"/>
+  <world time="0">
+    <object name="o0" type="robot"/>
+    <object name="o1" type="couch"/>
+    <object name="o2" type="table"/>
+    <object name="o3" type="chair"/>
+  </world>
+  <VP>
+    <grounding>
+      <grounding_set>
+        <constraint type="inside">
+          <parent>
+            <region type="na">
+              <object name="o0" type="robot"/>
+            </region>
+          </parent>
+          <child>
+            <region type="front">
+              <object name="o1" type="couch"/>
+            </region>
+          </child>
+        </constraint>
+      </grounding_set>
+    </grounding>
+    <VB text="approach"/>
+    <NP>
+      <grounding>
+        <grounding_set>
+          <region type="front">
+            <object name="o1" type="couch"/>
+          </region>
+        </grounding_set>
+      </grounding>
+      <NP>
+        <grounding>
+          <grounding_set>
+            <region type="front">
+              <object name="na" type="na"/>
+            </region>
+          </grounding_set>
+        </grounding>
+        <DT text="the"/>
+        <NN text="front"/>
+      </NP>
+      <PP>
+        <grounding>
+          <grounding_set>
+            <region type="na">
+              <object name="o1" type="couch"/>
+            </region>
+          </grounding_set>
+        </grounding>
+        <IN text="of"/>
+        <NP>
+          <grounding>
+            <grounding_set>
+              <region type="na">
+                <object name="o1" type="couch"/>
+              </region>
+            </grounding_set>
+          </grounding>
+          <DT text="the"/>
+          <NN text="sofa"/>
+        </NP>
+      </PP>
+    </NP>
+  </VP>
+</root>

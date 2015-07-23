@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <instruction text="walk near the table"/>
+  <world time="0">
+    <object name="o0" type="robot"/>
+    <object name="o1" type="box"/>
+    <object name="o2" type="table"/>
+    <object name="o3" type="chair"/>
+  </world>
+  <VP>
+    <grounding>
+      <grounding_set>
+        <constraint type="inside">
+          <parent>
+            <region type="na">
+              <object name="o0" type="robot"/>
+            </region>
+          </parent>
+          <child>
+            <region type="near">
+              <object name="o2" type="table"/>
+            </region>
+          </child>
+        </constraint>
+      </grounding_set>
+    </grounding>
+    <VB text="walk"/>
+    <PP>
+      <grounding>
+        <grounding_set>
+          <region type="near">
+            <object name="o2" type="table"/>
+          </region>
+        </grounding_set>
+      </grounding>
+      <IN text="near"/>
+      <NP>
+        <grounding>
+          <grounding_set>
+            <region type="na">
+              <object name="o2" type="table"/>
+            </region>
+          </grounding_set>
+        </grounding>
+        <DT text="the"/>
+        <NN text="table"/>
+      </NP>
+    </PP>
+  </VP>
+</root>

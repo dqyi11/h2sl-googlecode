@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <instruction text="leave the table"/>
+  <world time="0">
+    <object name="o0" type="robot"/>
+    <object name="o1" type="box"/>
+    <object name="o2" type="table"/>
+    <object name="o3" type="chair"/>
+  </world>
+  <VP>
+    <grounding>
+      <grounding_set>
+        <constraint type="outside">
+          <parent>
+            <region type="na">
+              <object name="o0" type="robot"/>
+            </region>
+          </parent>
+          <child>
+            <region type="na">
+              <object name="o2" type="table"/>
+            </region>
+          </child>
+        </constraint>
+      </grounding_set>
+    </grounding>
+    <VB text="leave"/>
+    <NP>
+      <grounding>
+        <grounding_set>
+          <region type="na">
+            <object name="o2" type="table"/>
+          </region>
+        </grounding_set>
+      </grounding>
+      <DT text="the"/>
+      <NN text="table"/>
+    </NP>
+  </VP>
+</root>
