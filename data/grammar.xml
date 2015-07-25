@@ -20,7 +20,7 @@
     <grammar_terminal symbol="POS" words=""/>
     <grammar_terminal symbol="PRP" words=""/>
     <grammar_terminal symbol="PRPD" words=""/>
-    <grammar_terminal symbol="RB" words=""/>
+    <grammar_terminal symbol="RB" words="quickly,carefully,covertly"/>
     <grammar_terminal symbol="RBR" words=""/>
     <grammar_terminal symbol="RBS" words=""/>
     <grammar_terminal symbol="RP" words="over"/>
@@ -41,6 +41,7 @@
     <grammar_non_terminal root="SBAR" children="WHNP,S"/>
     <grammar_non_terminal root="VP" children="VB,PP"/>
     <grammar_non_terminal root="VP" children="VB,X1"/>
+    <grammar_non_terminal root="VP" children="RB,VP"/>
     <grammar_non_terminal root="VP" children="VB,X3"/>
     <grammar_non_terminal root="VP" children="VB,NP"/>
     <grammar_non_terminal root="VP" children="VBZ,NP"/>

@@ -63,6 +63,10 @@
         <feature_word invert="0" pos="NN" text="tape"/>
         <feature_word invert="0" pos="NN" text="bone"/>
         <feature_word invert="0" pos="TO" text="to"/>
+        <feature_word invert="0" pos="RB" text="carefully"/>
+        <feature_word invert="0" pos="RB" text="covertly"/>
+        <feature_word invert="0" pos="RB" text="quickly"/>
+        <feature_word invert="0" pos="RB" text="safely"/>
         <feature_num_words invert="0" num_words="0"/>
       </feature_group>
       <feature_group>
