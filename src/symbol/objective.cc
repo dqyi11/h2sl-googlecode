@@ -99,17 +99,17 @@ string
 Objective::
 type_to_std_string( const unsigned int& type ){
   switch( type ){
-  case( OBJECTIVE_TYPE_QUICKLY ):
-    return "quickly";
+  case( OBJECTIVE_TYPE_MIN_DISTANCE ):
+    return "min_distance";
     break;
-  case( OBJECTIVE_TYPE_SAFELY ):
-    return "safely";
+  case( OBJECTIVE_TYPE_MAX_SMOOTHNESS ):
+    return "max_smoothness";
     break;
-  case( OBJECTIVE_TYPE_COVERTLY ):
-    return "covertly";
+  case( OBJECTIVE_TYPE_MIN_RISK ):
+    return "min_risk";
     break;
-  case( OBJECTIVE_TYPE_CAREFULLY ):
-    return "carefully";
+  case( OBJECTIVE_TYPE_MAX_VISBILITY ):
+    return "max_visibility";
     break;
   default:
     return "na";
@@ -144,7 +144,7 @@ void
 Objective::
 to_xml( xmlDocPtr doc,
         xmlNodePtr root )const{
-  xmlNodePtr node = xmlNewDocNode( doc, NULL, ( const xmlChar* )( "object" ), NULL );
+  xmlNodePtr node = xmlNewDocNode( doc, NULL, ( const xmlChar* )( "objective" ), NULL );
   xmlNewProp( node, ( const xmlChar* )( "name" ), ( const xmlChar* )( _name.c_str() ) );
   xmlNewProp( node, ( const xmlChar* )( "type" ), ( const xmlChar* )( Objective::type_to_std_string( _type ).c_str() ) );
   xmlAddChild( root, node );
@@ -163,7 +163,7 @@ from_xml( const string& filename ){
       xmlNodePtr l1 = NULL;
       for( l1 = root->children; l1; l1 = l1->next ){
         if( l1->type == XML_ELEMENT_NODE ){
-          if( xmlStrcmp( l1->name, ( const xmlChar* )( "object" ) ) == 0 ){
+          if( xmlStrcmp( l1->name, ( const xmlChar* )( "objective" ) ) == 0 ){
             from_xml( l1 );
           }
         }

@@ -12,6 +12,7 @@ add_library(${LIB} SHARED
             feature_word.cc
             feature_num_words.cc
             feature_object.cc
+            feature_objective.cc
             feature_region_object.cc
             feature_region.cc
             feature_constraint.cc
@@ -49,6 +50,7 @@ install(FILES
         h2sl/feature_word.h
         h2sl/feature_num_words.h
         h2sl/feature_object.h
+        h2sl/feature_objective.h
         h2sl/feature_region_object.h
         h2sl/feature_region.h
         h2sl/feature_constraint.h

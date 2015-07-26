@@ -34,6 +34,7 @@
 #include "h2sl/object.h"
 #include "h2sl/region.h"
 #include "h2sl/constraint.h"
+#include "h2sl/objective.h"
 
 #include "h2sl/grounding_set.h"
 
@@ -156,7 +157,10 @@ from_xml( xmlNodePtr root ){
         } else if ( xmlStrcmp( l1->name, ( const xmlChar* )( "constraint" ) ) == 0 ){
           _groundings.push_back( new Constraint() );
           _groundings.back()->from_xml( l1 );
-        } 
+        } else if ( xmlStrcmp( l1->name, ( const xmlChar* )( "objective" ) ) == 0){
+          _groundings.push_back( new Objective() );
+          _groundings.back()->from_xml( l1 );
+        }
       }
     }
   }

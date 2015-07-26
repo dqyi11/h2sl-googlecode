@@ -35,6 +35,7 @@
 #include "h2sl/feature_num_words.h"
 #include "h2sl/feature_cv.h"
 #include "h2sl/feature_object.h"
+#include "h2sl/feature_objective.h"
 #include "h2sl/feature_region_object.h"
 #include "h2sl/feature_region.h"
 #include "h2sl/feature_constraint.h"
@@ -227,6 +228,9 @@ from_xml( xmlNodePtr root ){
                 _feature_groups.back().back()->from_xml( l2 );
               } else if ( xmlStrcmp( l2->name, ( const xmlChar* )( "feature_object" ) ) == 0 ){
                 _feature_groups.back().push_back( new Feature_Object() );
+                _feature_groups.back().back()->from_xml( l2 );
+              } else if ( xmlStrcmp( l2->name, ( const xmlChar* )( "feature_objective" ) ) == 0 ){
+                _feature_groups.back().push_back( new Feature_Objective() );
                 _feature_groups.back().back()->from_xml( l2 );
               } else if ( xmlStrcmp( l2->name, ( const xmlChar* )( "feature_region_object" ) ) == 0 ){
                 _feature_groups.back().push_back( new Feature_Region_Object() );

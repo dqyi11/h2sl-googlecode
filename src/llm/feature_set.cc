@@ -35,6 +35,7 @@
 #include "h2sl/feature_num_words.h"
 #include "h2sl/feature_cv.h"
 #include "h2sl/feature_object.h"
+#include "h2sl/feature_objective.h"
 #include "h2sl/feature_region_object.h"
 #include "h2sl/feature_region.h"
 #include "h2sl/feature_constraint.h"
