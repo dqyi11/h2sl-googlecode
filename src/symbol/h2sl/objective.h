@@ -37,13 +37,12 @@
 #include <libxml/tree.h>
 
 #include "h2sl/grounding.h"
-#include "h2sl/transform.h"
 
 namespace h2sl {
   typedef enum {
     OBJECTIVE_TYPE_UNKNOWN,
     OBJECTIVE_TYPE_QUICKLY,
-    OBJECTIVE_TYPE_SAFETLY,
+    OBJECTIVE_TYPE_SAFELY,
     OBJECTIVE_TYPE_COVERTLY,
     OBJECTIVE_TYPE_CAREFULLY,
     NUM_OBJECTIVE_TYPES
@@ -52,7 +51,7 @@ namespace h2sl {
   class Objective: public Grounding {
   public:
     Objective( const std::string& name = "na", const unsigned int& type = 0 );
-    Objective( const std::string& name, const object_type_t& type );
+    Objective( const std::string& name, const objective_type_t& type );
     virtual ~Objective();
     Objective( const Objective& other );
     Objective& operator=( const Objective& other );
