@@ -10,10 +10,10 @@
   <VP>
     <grounding>
      <grounding_set>
-       <objective name="o3" type="min_risk">
+       <objective name="o3" type="min_risk"/>
      </grounding_set>
     </grounding>
-    <VB text="covertly" />
+    <VB text="covertly"  />
   <VP>
     <grounding>
       <grounding_set>

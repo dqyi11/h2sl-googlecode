@@ -10,8 +10,7 @@
   <VP>
     <grounding>
       <grounding_set>
-	<objective name="o1" type="min_distance">
-	</objective>
+	<objective name="o1" type="min_distance"/>
       </grounding_set>
     </grounding>
     <RB text="quickly"/>

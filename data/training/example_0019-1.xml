@@ -10,9 +10,8 @@
   <VP>
     <grounding>
       <grounding_set>
-        <objective name="o4" type="max_visibility">
-	<objective name="o1" type="min_distance">
-	</objective>
+        <objective name="o4" type="max_visibility"/>
+	<objective name="o1" type="min_distance"/>
       </grounding_set>
     </grounding>
     <RB text="carefully"/>

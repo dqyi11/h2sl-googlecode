@@ -10,12 +10,11 @@
   <VP>
     <grounding>
       <grounding_set>
-        <objective name="o2" type="max_smoothness">
-	<objective name="o1" type="min_distance">
-	</objective>
+        <objective name="o2" type="max_smoothness"/>
+	<objective name="o1" type="min_distance"/>
       </grounding_set>
     </grounding>
-    <RB text="carefully"/>
+    <RB text="carefully" />
   <VP>
     <grounding>
       <grounding_set>

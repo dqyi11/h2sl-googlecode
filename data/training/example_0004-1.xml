@@ -10,9 +10,8 @@
   <VP>
     <grounding>
       <grounding_set>
-        <objective name="o3" type="min_risk">
-	<objective name="o4" type="max_visibility">
-	</objective>
+        <objective name="o3" type="min_risk"/>
+	<objective name="o4" type="max_visibility"/>
       </grounding_set>
     </grounding>
     <RB text="safely"/>
@@ -95,4 +94,5 @@
       </NP>
     </PP>
   </VP>
+</VP>
 </root>
