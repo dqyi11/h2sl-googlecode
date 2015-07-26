@@ -10,7 +10,8 @@
   <VP>
     <grounding>
       <grounding_set>
-        <objective type="min_smooth">
+        <objective name="o2" type="max_smoothness">
+	<objective name="o1" type="min_distance">
 	</objective>
       </grounding_set>
     </grounding>

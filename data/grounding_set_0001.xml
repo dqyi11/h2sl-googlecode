@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <grounding_set>
+  <objective name="o1" type="min_distance" />
+  <objective name="o2" type="max_smoothness" />
+  <objective name="o3" type="min_risk" />
+  <objective name="o4" type="max_visibility" />
+  </grounding_set>
+</root>
