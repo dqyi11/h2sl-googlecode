@@ -31,6 +31,7 @@
  */
 
 #include "h2sl/region.h"
+#include "h2sl/objective.h"
 #include <h2sl/factor.h>
 
 using namespace std;
@@ -121,7 +122,9 @@ namespace h2sl {
     out << "cv:\"" << other.cv() << "\" ";
     if( dynamic_cast< const Region* >( other.grounding() ) != NULL ){
       out << "grounding:(" << *static_cast< const Region* >( other.grounding() ) << ") ";
-    } else {
+    } else if ( dynamic_cast< const Objective* >( other.grounding() ) != NULL  ){
+      out << "grounding:(" << *static_cast< const Objective* >( other.grounding() ) << ") ";
+    }else {
       out << "grounding:(NULL) ";
     }
     if( other.phrase() != NULL ){
