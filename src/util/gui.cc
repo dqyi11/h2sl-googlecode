@@ -210,12 +210,10 @@ void
 QGraphicsItem_Grounding::
 mousePressEvent( QGraphicsSceneMouseEvent * event ){
   stringstream comment_string;
-  if( dynamic_cast< const Region* >( _grounding ) != NULL ){
-    comment_string << *static_cast< const Region* >( _grounding );
-  } else if ( dynamic_cast< const Constraint* >( _grounding ) != NULL ){
-    comment_string << *static_cast< const Constraint* >( _grounding );
-  } else if ( dynamic_cast< const Phrase* >( _grounding ) != NULL ){
+  if ( dynamic_cast< const Phrase* >( _grounding ) != NULL ){
     comment_string << *static_cast< const Phrase* >( _grounding );
+  } else if ( _grounding != NULL ){
+    comment_string << *_grounding;
   }
   emit comment( comment_string.str(), false );
   return;

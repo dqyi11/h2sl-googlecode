@@ -35,6 +35,7 @@
 #include "h2sl/object.h"
 #include "h2sl/region.h"
 #include "h2sl/constraint.h"
+#include "h2sl/objective.h"
 #include "h2sl/grounding_set.h"
 
 using namespace std;
@@ -116,6 +117,8 @@ namespace h2sl {
       out << *static_cast< const Region* >( &other );
     } else if( dynamic_cast< const Constraint* >( &other ) != NULL ){
       out << *static_cast< const Constraint* >( &other );
+    } else if( dynamic_cast< const Objective* >( &other ) != NULL ){
+      out << *static_cast< const Objective* >( &other );
     }
     return out;
   }

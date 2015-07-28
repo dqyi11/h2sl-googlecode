@@ -37,6 +37,7 @@
 #include "h2sl/grounding_set.h"
 #include "h2sl/region.h"
 #include "h2sl/constraint.h"
+#include "h2sl/objective.h"
 #include "h2sl/llm.h"
 #include "h2sl/dcg.h"
 #include "llm_train_cmdline.h"
@@ -104,7 +105,17 @@ evaluate_cv( const Grounding* grounding,
         }
       }
     }
-  }   
+  } else if ( dynamic_cast< const Objective* >( grounding ) != NULL ){
+    const Objective* objective_grounding = dynamic_cast< const Objective* >( grounding );
+    cv = CV_FALSE;  
+    for( unsigned int i = 0; i < groundingSet->groundings().size(); i++ ){
+      if( dynamic_cast< const Objective* >( groundingSet->groundings()[ i ] ) ){
+        if( *objective_grounding == *dynamic_cast< const Objective* >( groundingSet->groundings()[ i ] ) ){
+          cv = CV_TRUE;
+        }
+      }
+    }
+  } 
  
   return cv;
 }

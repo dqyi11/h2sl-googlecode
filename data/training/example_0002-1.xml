@@ -13,7 +13,7 @@
        <objective name="o3" type="min_risk"/>
      </grounding_set>
     </grounding>
-    <VB text="covertly"  />
+    <RB text="covertly"  />
   <VP>
     <grounding>
       <grounding_set>

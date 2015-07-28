@@ -131,7 +131,7 @@ fill_search_spaces( const World* world ){
   for( unsigned int i = 0; i < NUM_OBJECTIVE_TYPES; i++ )
   {
       if( i != REGION_TYPE_UNKNOWN ){
-        _search_spaces[ PHRASE_VP ].push_back( make_pair< vector< unsigned int >, Grounding* >( binary_cvs, new Objective( "na", i ) ) );
+        _search_spaces[ PHRASE_VP ].push_back( make_pair< vector< unsigned int >, Grounding* >( binary_cvs, new Objective( i ) ) );
       }
   }
   return;

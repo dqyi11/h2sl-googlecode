@@ -50,8 +50,8 @@ namespace h2sl {
 
   class Objective: public Grounding {
   public:
-    Objective( const std::string& name = "na", const unsigned int& type = 0 );
-    Objective( const std::string& name, const objective_type_t& type );
+    Objective( const unsigned int& type = 0 );
+    Objective( const objective_type_t& type );
     virtual ~Objective();
     Objective( const Objective& other );
     Objective& operator=( const Objective& other );
@@ -68,13 +68,11 @@ namespace h2sl {
     virtual void from_xml( const std::string& filename );
     virtual void from_xml( xmlNodePtr root );
 
-    inline std::string& name( void ){ return _name; };
-    inline const std::string& name( void )const{ return _name; };
+
     inline unsigned int& type( void ){ return _type; };
     inline const unsigned int& type( void )const{ return _type; };
 
   protected:
-    std::string _name;
     unsigned int _type;
 
   private:

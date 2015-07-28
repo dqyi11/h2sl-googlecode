@@ -36,17 +36,13 @@ using namespace std;
 using namespace h2sl;
 
 Objective::
-Objective( const string& name,
-        const unsigned int& type ) : Grounding(),
-                                        _name( name ),
+Objective( const unsigned int& type ) : Grounding(),
                                         _type( type ) {
   
 }
 
 Objective::
-Objective( const string& name,
-        const objective_type_t& type ) : Grounding(),
-                                        _name( name ),
+Objective( const objective_type_t& type ) : Grounding(),
                                         _type( type ) {
 
 }
@@ -58,7 +54,6 @@ Objective::
 
 Objective::
 Objective( const Objective& other ) : Grounding( other ),
-                                _name( other._name ),
                                 _type( other._type ) {
 
 }
@@ -66,7 +61,6 @@ Objective( const Objective& other ) : Grounding( other ),
 Objective&
 Objective::
 operator=( const Objective& other ) {
-  _name = other._name;
   _type = other._type;
   return (*this);
 }
@@ -74,9 +68,7 @@ operator=( const Objective& other ) {
 bool
 Objective::
 operator==( const Objective& other )const{
-  if( _name != other._name ){
-    return false;
-  } else if ( _type != other._type ){
+  if ( _type != other._type ){
     return false;
   } else {
     return true;
@@ -145,7 +137,6 @@ Objective::
 to_xml( xmlDocPtr doc,
         xmlNodePtr root )const{
   xmlNodePtr node = xmlNewDocNode( doc, NULL, ( const xmlChar* )( "objective" ), NULL );
-  xmlNewProp( node, ( const xmlChar* )( "name" ), ( const xmlChar* )( _name.c_str() ) );
   xmlNewProp( node, ( const xmlChar* )( "type" ), ( const xmlChar* )( Objective::type_to_std_string( _type ).c_str() ) );
   xmlAddChild( root, node );
   return;
@@ -178,12 +169,7 @@ void
 Objective::
 from_xml( xmlNodePtr root ){
   if( root->type == XML_ELEMENT_NODE ){
-    xmlChar * tmp = xmlGetProp( root, ( const xmlChar* )( "name" ) );
-    if( tmp != NULL ){
-      _name = ( char* )( tmp );
-      xmlFree( tmp );
-    }
-    tmp = xmlGetProp( root, ( const xmlChar* )( "type" ) );
+    xmlChar * tmp = xmlGetProp( root, ( const xmlChar* )( "type" ) );
     if( tmp != NULL ){
       string type_string = ( char* )( tmp );
       _type = Objective::type_from_std_string( type_string );
@@ -199,7 +185,6 @@ namespace h2sl {
   operator<<( ostream& out,
               const Objective& other ) {
     out << "Objective(";
-    out << "name=\"" << other.name() << "\",";
     out << "type=\"" << Objective::type_to_std_string( other.type() ) << "\",";
     out << ")";
     return out;
