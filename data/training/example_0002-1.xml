@@ -11,10 +11,29 @@
     <grounding>
      <grounding_set>
        <objective name="o3" type="min_risk"/>
+        <constraint type="inside">
+          <parent>
+            <region type="na">
+              <object name="o0" type="robot"/>
+            </region>
+          </parent>
+          <child>
+            <region type="left">
+              <object name="o2" type="sink"/>
+            </region>
+          </child>
+        </constraint>
      </grounding_set>
     </grounding>
-    <RB text="covertly"  />
-  <VP>
+    <ADVP>
+    <grounding>
+     <grounding_set>
+       <objective name="o3" type="min_risk"/>
+     </grounding_set>
+    </grounding>
+    <RB text="covertly"/>
+    </ADVP>
+    <VP>
     <grounding>
       <grounding_set>
         <constraint type="inside">

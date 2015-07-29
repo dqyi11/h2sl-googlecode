@@ -11,9 +11,28 @@
     <grounding>
       <grounding_set>
 	<objective name="o1" type="min_distance"/>
+        <constraint type="inside">
+          <parent>
+            <region type="na">
+              <object name="o0" type="robot"/>
+            </region>
+          </parent>
+          <child>
+            <region type="back">
+              <object name="o2" type="table"/>
+            </region>
+          </child>
+        </constraint>
+      </grounding_set>
+    </grounding>
+    <ADVP>
+    <grounding>
+      <grounding_set>
+	<objective name="o1" type="min_distance"/>
       </grounding_set>
     </grounding>
     <RB text="quickly"/>
+    </ADVP>
   <VP>
     <grounding>
       <grounding_set>

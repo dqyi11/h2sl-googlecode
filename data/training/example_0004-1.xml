@@ -12,9 +12,41 @@
       <grounding_set>
         <objective name="o3" type="min_risk"/>
 	<objective name="o4" type="max_visibility"/>
+        <constraint type="inside">
+          <parent>
+            <region type="na">
+              <object name="o0" type="robot"/>
+            </region>
+          </parent>
+          <child>
+            <region type="na">
+              <object name="o1" type="box"/>
+            </region>
+          </child>
+        </constraint>
+        <constraint type="inside">
+          <parent>
+            <region type="na">
+              <object name="o0" type="robot"/>
+            </region>
+          </parent>
+          <child>
+            <region type="na">
+              <object name="o3" type="chair"/>
+            </region>
+          </child>
+        </constraint>
+      </grounding_set>
+    </grounding>
+    <ADVP>
+    <grounding>
+      <grounding_set>
+        <objective name="o3" type="min_risk"/>
+	<objective name="o4" type="max_visibility"/>
       </grounding_set>
     </grounding>
     <RB text="safely"/>
+    </ADVP>
   <VP>
     <grounding>
       <grounding_set>

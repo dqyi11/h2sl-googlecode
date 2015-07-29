@@ -41,9 +41,9 @@
     <grammar_non_terminal root="SBAR" children="WHNP,S"/>
     <grammar_non_terminal root="VP" children="VB,PP"/>
     <grammar_non_terminal root="VP" children="VB,X1"/>
-    <grammar_non_terminal root="VP" children="RB,VP"/>
-    <grammar_non_terminal root="VP" children="VB,RB,PP"/>
-    <grammar_non_terminal root="VP" children="VB,RB,NP"/>
+    <grammar_non_terminal root="VP" children="ADVP,VP"/>
+    <grammar_non_terminal root="VP" children="VB,ADVP,PP"/>
+    <grammar_non_terminal root="VP" children="VB,ADVP,NP"/>
     <grammar_non_terminal root="VP" children="VB,X3"/>
     <grammar_non_terminal root="VP" children="VB,NP"/>
     <grammar_non_terminal root="VP" children="VBZ,NP"/>
@@ -68,5 +68,6 @@
     <grammar_unit_production type="WHNP" symbol="WDT"/>
     <grammar_unit_production type="S" symbol="VP"/>
     <grammar_unit_production type="VP" symbol="VB"/>
+    <grammar_unit_production type="ADVP" symbol="RB"/>
   </grammar>
 </root>
