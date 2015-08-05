@@ -128,6 +128,10 @@
         <feature_constraint_parent_is_robot invert="1"/>
         <feature_constraint_child_is_robot invert="0"/>
         <feature_constraint_child_is_robot invert="1"/>
+        <feature_objective invert="0" objective_type="1"/>
+	<feature_objective invert="0" objective_type="2"/>
+	<feature_objective invert="0" objective_type="3"/>
+	<feature_objective invert="0" objective_type="4"/>
       </feature_group>
     </feature_product>
     <feature_product>

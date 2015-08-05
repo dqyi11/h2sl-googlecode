@@ -10,8 +10,6 @@
   <VP>
     <grounding>
       <grounding_set>
-        <objective name="o3" type="min_risk"/>
-	<objective name="o1" type="min_distance"/>
         <constraint type="inside">
           <parent>
             <region type="na">
@@ -24,6 +22,8 @@
             </region>
           </child>
         </constraint>
+        <objective name="o3" type="min_risk"/>
+	<objective name="o1" type="min_distance"/>
       </grounding_set>
     </grounding>
     <ADVP>
