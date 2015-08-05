@@ -42,10 +42,12 @@
 #include "h2sl/feature_region_object_matches_child.h"
 #include "h2sl/feature_region_matches_child.h"
 #include "h2sl/feature_region_merge_partially_known_regions.h"
+#include "h2sl/feature_objective_matches_child.h"
 #include "h2sl/feature_constraint_parent_matches_child_region.h"
 #include "h2sl/feature_constraint_child_matches_child_region.h"
 #include "h2sl/feature_constraint_parent_is_robot.h"
 #include "h2sl/feature_constraint_child_is_robot.h"
+#include "h2sl/feature_constraint_matches_child.h"
 #include "h2sl/feature_product.h"
 
 using namespace std;
@@ -261,6 +263,12 @@ from_xml( xmlNodePtr root ){
                 _feature_groups.back().back()->from_xml( l2 );
               } else if ( xmlStrcmp( l2->name, ( const xmlChar* )( "feature_constraint_child_is_robot" ) ) == 0 ){
                 _feature_groups.back().push_back( new Feature_Constraint_Child_Is_Robot() );
+                _feature_groups.back().back()->from_xml( l2 );
+              } else if ( xmlStrcmp( l2->name, ( const xmlChar* )( "feature_objective_matches_child" ) ) == 0 ){
+                _feature_groups.back().push_back( new Feature_Objective_Matches_Child() );
+                _feature_groups.back().back()->from_xml( l2 );
+              } else if ( xmlStrcmp( l2->name, ( const xmlChar* )( "feature_constraint_matches_child" ) ) == 0 ){
+                _feature_groups.back().push_back( new Feature_Constraint_Matches_Child() );
                 _feature_groups.back().back()->from_xml( l2 );
               } else {
                 cout << "could not load feature " << l2->name << endl;

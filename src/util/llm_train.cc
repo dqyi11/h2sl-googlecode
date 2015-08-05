@@ -59,18 +59,22 @@ evaluate_model( LLM* llm,
       cout << "example " << i << " had pygx " << pygx << endl;
       cout << "         cv:" << examples[ i ].first << endl;
       if( dynamic_cast< Region* >( examples[ i ].second.grounding() ) != NULL ){
-        cout << "  grounding:" << *static_cast< Region* >( examples[ i ].second.grounding() ) << endl; 
+        cout << "[ GROUNDING ]: " << *static_cast< Region* >( examples[ i ].second.grounding() ) << endl << endl; 
       } else if ( dynamic_cast< Constraint* >( examples[ i ].second.grounding() ) != NULL ){
-        cout << "  grounding:" << *static_cast< Constraint* >( examples[ i ].second.grounding() ) << endl; 
+        cout << "[ GROUNDING ]: " << *static_cast< Constraint* >( examples[ i ].second.grounding() ) << endl << endl; 
+      } else if ( dynamic_cast< Objective* >( examples[ i ].second.grounding() ) != NULL ){
+        cout << "[ GROUNDING ]: " << *static_cast< Objective* >( examples[ i ].second.grounding() ) << endl << endl;
       }
       for( unsigned int j = 0; j < examples[ i ].second.children().size(); j++ ){
         if( dynamic_cast< Region* >( examples[ i ].second.children()[ j ] ) != NULL ){
-          cout << "children[" << j << "]:" << *static_cast< Region* >( examples[ i ].second.children()[ j ] ) << endl;
+          cout << "CHILDREN[" << j << "]: " << *static_cast< Region* >( examples[ i ].second.children()[ j ] ) << endl << endl;
         } else if( dynamic_cast< Constraint* >( examples[ i ].second.children()[ j ] ) != NULL ){
-          cout << "children[" << j << "]:" << *static_cast< Constraint* >( examples[ i ].second.children()[ j ] ) << endl;
+          cout << "CHILDREN[" << j << "]: " << *static_cast< Constraint* >( examples[ i ].second.children()[ j ] ) << endl << endl;
+        } else if( dynamic_cast< Objective* >( examples[ i ].second.children()[ j ] ) != NULL ){
+          cout << "CHILDREN[" << j << "]: " << *static_cast< Objective* >( examples[ i ].second.children()[ j ] ) << endl << endl;
         }
       }
-      cout << "     phrase:" << *examples[ i ].second.phrase() << endl << endl;
+      cout << "     [ PHRASE ]:" << *examples[ i ].second.phrase() << endl << endl << endl;
     } else {
       num_correct++;
     }
@@ -195,7 +199,8 @@ main( int argc,
   cout << "training with " << examples.size() << " examples" << endl;
 
   llm->train( examples, args.max_iterations_arg, args.lambda_arg, args.epsilon_arg );
- 
+
+  cout << " evaluating model with examples " << endl; 
   evaluate_model( llm, examples );
 
   if( args.output_given ){

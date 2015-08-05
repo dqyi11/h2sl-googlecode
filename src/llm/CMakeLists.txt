@@ -15,6 +15,7 @@ add_library(${LIB} SHARED
             feature_objective.cc
             feature_region_object.cc
             feature_region.cc
+            feature_objective_matches_child.cc
             feature_constraint.cc
             feature_region_object_matches_child.cc
             feature_region_matches_child.cc
@@ -23,6 +24,7 @@ add_library(${LIB} SHARED
             feature_constraint_child_matches_child_region.cc
             feature_constraint_parent_is_robot.cc
             feature_constraint_child_is_robot.cc
+            feature_constraint_matches_child.cc
             feature_product.cc
             feature_set.cc
             llm.cc)
@@ -57,10 +59,12 @@ install(FILES
         h2sl/feature_region_object_matches_child.h
         h2sl/feature_region_matches_child.h
         h2sl/feature_region_merge_partially_known_regions.h
+        h2sl/feature_objective_matches_child.h
         h2sl/feature_constraint_parent_matches_child_region.h
         h2sl/feature_constraint_child_matches_child_region.h
         h2sl/feature_constraint_parent_is_robot.h
         h2sl/feature_constraint_child_is_robot.h
+        h2sl/feature_constraint_matches_child.h
         h2sl/feature_product.h
         h2sl/feature_set.h
         h2sl/llm.h
