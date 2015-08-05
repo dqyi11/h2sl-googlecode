@@ -20,7 +20,7 @@
     <grammar_terminal symbol="POS" words=""/>
     <grammar_terminal symbol="PRP" words=""/>
     <grammar_terminal symbol="PRPD" words=""/>
-    <grammar_terminal symbol="RB" words="quickly,carefully,covertly"/>
+    <grammar_terminal symbol="RB" words="quickly,carefully,covertly,safely"/>
     <grammar_terminal symbol="RBR" words=""/>
     <grammar_terminal symbol="RBS" words=""/>
     <grammar_terminal symbol="RP" words="over"/>
